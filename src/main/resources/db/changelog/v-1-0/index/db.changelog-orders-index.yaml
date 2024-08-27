@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: 7
+      author: Vasylenko_O
+      changes:
+        - createIndex:
+            tableName: orders
+            indexName: idx_morion_order_id
+            columns:
+              - column:
+                  name: morion_order_id
+        - createIndex:
+            tableName: orders
+            indexName: idx_shop_id
+            columns:
+              - column:
+                  name: shop_id

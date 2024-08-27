@@ -1,0 +1,40 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8
+      author: Vasylenko_O
+      changes:
+        - createTable:
+            tableName: orders
+            columns:
+              - column:
+                  name: tabletki_order_id
+                  type: UUID
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: username
+                  type: VARCHAR(40)
+              - column:
+                  name: morion_order_id
+                  type: VARCHAR(20)
+              - column:
+                  name: shop_order_id
+                  type: VARCHAR(60)
+              - column:
+                  name: shop_id
+                  type: VARCHAR(20)
+              - column:
+                  name: shop_ext_id
+                  type: VARCHAR(40)
+              - column:
+                  name: phone
+                  type: VARCHAR(20)
+              - column:
+                  name: agent
+                  type: VARCHAR(20)
+              - column:
+                  name: time
+                  type: TIMESTAMP
+              - column:
+                  name: shipping
+                  type: VARCHAR(10)

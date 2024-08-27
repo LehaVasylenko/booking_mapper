@@ -1,0 +1,33 @@
+databaseChangeLog:
+  - changeSet:
+      id: 10
+      author: Vasylenko_O
+      changes:
+        - createTable:
+            tableName: states
+            columns:
+              - column:
+                  name: id
+                  type: BIGINT
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: tabletki_order_id
+                  type: UUID
+                  constraints:
+                    nullable: false
+              - column:
+                  name: time
+                  type: TIMESTAMP
+              - column:
+                  name: state
+                  type: VARCHAR(20)
+              - column:
+                  name: cancel_reason
+                  type: VARCHAR(60)
+              - addForeignKeyConstraint:
+                  baseTableName: states
+                  baseColumnNames: tabletki_order_id
+                  referencedTableName: orders
+                  referencedColumnNames: tabletki_order_id
